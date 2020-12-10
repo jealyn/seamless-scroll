@@ -10,7 +10,12 @@
 
 以横向滚动的图片为例，其无缝滚动示意图如下所示：
 
-![无缝滚动示意图](https://mmbiz.qpic.cn/mmbiz_gif/wnFvhQqHtzy0HhTkvXTmxVKc70O7o6ywfpJAMHJjLFwXn0uw3nPChd5nUHOJ0v26IqVDZ0UYMGAXgLOcdYNUNw/0?wx_fmt=gif)
+<iframe
+    width=100%
+    height=300
+    src="./seamless-scroll.html"
+    frameborder=0>
+</inframe>
 
 
 ## 实现方式
