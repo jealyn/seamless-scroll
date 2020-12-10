@@ -9,14 +9,37 @@
 在网页中，滚动是指元素在某个方向的位移过程；无缝，指的是元素上一次滚动结束和下一次滚动开始之间是平滑自然、紧密相连的，如同圆环一样首尾相接、不分起点与终点。
 
 以横向滚动的图片为例，其无缝滚动示意图如下所示：
+<style>
+    @keyframes infiniteScroll {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+</style>
 
-<iframe
-    width=100%
-    height=300
-    src="./seamless-scroll.html"
-    frameborder=0>
-</inframe>
-
+<div style="width: 510px; height: 300px; display: inline-block; overflow: hidden;">
+      <div style="white-space: nowrap; overflow-x: scroll; font-size: 0;">
+        <div style="display: inline-block;animation: infiniteScroll 15s linear infinite;">
+          <img src="http://lorempixel.com/200/300?key=1" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=2" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=3" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=4" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=5" style="width: 200px; height: 300px; margin-right: 5px;"/>
+        </div>
+        <!-- 复制一份数据，添加至容器末尾 -->
+        <div style="display: inline-block;animation: infiniteScroll 15s linear infinite;">
+          <img src="http://lorempixel.com/200/300?key=1" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=2" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=3" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=4" style="width: 200px; height: 300px; margin-right: 5px;"/>
+          <img src="http://lorempixel.com/200/300?key=5" style="width: 200px; height: 300px; margin-right: 5px;"/>
+        </div>
+      </div>
+    </div>
+  
 
 ## 实现方式
 
