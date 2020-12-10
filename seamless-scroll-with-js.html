@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>无缝滚动Demo 添加JS处理</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .container {
+        width: 510px;
+        height: 300px;
+        display: inline-block;
+        overflow: hidden;
+      }
+      .scroll-inline-container {
+        white-space: nowrap;
+        overflow-x: scroll;
+        font-size: 0;
+      }
+      .scroll-container {
+        display: inline-block;
+        animation: infiniteScroll linear infinite;
+      }
+
+      @keyframes infiniteScroll {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      .scroll-container .scroll-item {
+        width: 200px;
+        height: 300px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="scroll-inline-container">
+        <div class="scroll-container">
+          <img src="http://lorempixel.com/200/300?key=1" class="scroll-item" />
+          <img src="http://lorempixel.com/200/300?key=2" class="scroll-item" />
+          <img src="http://lorempixel.com/200/300?key=3" class="scroll-item" />
+          <img src="http://lorempixel.com/200/300?key=4" class="scroll-item" />
+          <img src="http://lorempixel.com/200/300?key=5" class="scroll-item" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 获取滚动列表数量
+    const imgLen = document.querySelectorAll(".scroll-container > .scroll-item")
+      .length;
+    // 获取滚动容器
+    const scrollContainer = document.querySelector(".scroll-container");
+
+    // 设置动画时长
+    scrollContainer.style.animationDuration = imgLen * 3 + "s";
+    // 拷贝一份滚动列表
+    document.querySelector(".scroll-inline-container").innerHTML +=
+      scrollContainer.outerHTML;
+  </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>无缝滚动Demo</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .container {
+        width: 210px;
+        height: 300px;
+        display: inline-block;
+        overflow: hidden;
+      }
+      .scroll-inline-container {
+        white-space: nowrap;
+        overflow-x: scroll;
+        font-size: 0;
+      }
+      .scroll-container {
+        display: inline-block;
+        animation: infiniteScroll 15s linear infinite;
+      }
+
+      @keyframes infiniteScroll {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      .scroll-container .scroll-item {
+        width: 200px;
+        height: 300px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="scroll-inline-container">
+        <div class="scroll-container">
+          <img src="http://lorempixel.com/200/300?key=1" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=2" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=3" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=4" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=5" class="scroll-item"/>
+        </div>
+        <!-- 复制一份数据，添加至容器末尾 -->
+        <div class="scroll-container">
+          <img src="http://lorempixel.com/200/300?key=1" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=2" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=3" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=4" class="scroll-item"/>
+          <img src="http://lorempixel.com/200/300?key=5" class="scroll-item"/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
